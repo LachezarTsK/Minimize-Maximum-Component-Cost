@@ -92,10 +92,10 @@ class UnionFind {
      * @return {number}
      */
     findParent(index) {
-        if (this.parent[index] !== index) {
-            this.parent[index] = this.findParent(this.parent[index]);
+        if (this.#parent[index] !== index) {
+            this.#parent[index] = this.findParent(this.#parent[index]);
         }
-        return this.parent[index];
+        return this.#parent[index];
     }
 
     /**
@@ -111,12 +111,12 @@ class UnionFind {
         }
         --this.numberOfConnectedComponents;
 
-        if (this.rank[first] >= this.rank[second]) {
-            this.parent[second] = first;
-            this.rank[first] += this.rank[second];
+        if (this.#rank[first] >= this.#rank[second]) {
+            this.#parent[second] = first;
+            this.#rank[first] += this.#rank[second];
         } else {
-            this.parent[first] = second;
-            this.rank[second] += this.rank[first];
+            this.#parent[first] = second;
+            this.#rank[second] += this.#rank[first];
         }
     }
 
