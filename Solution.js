@@ -109,7 +109,7 @@ class UnionFind {
         if (first === second) {
             return;
         }
-        --this.numberOfConnectedComponents;
+        --this.#numberOfConnectedComponents;
 
         if (this.#rank[first] >= this.#rank[second]) {
             this.#parent[second] = first;
