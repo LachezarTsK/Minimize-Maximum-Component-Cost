@@ -74,6 +74,10 @@ class Util {
 
 class UnionFind {
 
+    #rank;
+    #parent;
+    #numberOfConnectedComponents;
+
     /**
      * @param {number} numberOfNodes
      */
